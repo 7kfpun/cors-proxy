@@ -22,6 +22,9 @@ const blockedPhrases = new RegExp(/porn|sexy/);  // No thank you.
  */
 exports.cors = functions.https.onRequest((req, res) => {
   cors(req, res, () => {
+    console.log('Query:', req.query);
+    console.log('Body:', req.body);
+
     let url = req.query.url;
 
     if (!url) {
@@ -41,7 +44,7 @@ exports.cors = functions.https.onRequest((req, res) => {
 
     fetch(url, {
       method: req.method,
-      body: req.body,
+      body: req.get('content-type') === 'application/json' ? JSON.stringify(req.body) : req.body,
       headers: {
         'Content-Type': req.get('Content-Type'),
       },

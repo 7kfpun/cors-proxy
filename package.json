@@ -1,0 +1,17 @@
+{
+  "name": "cors-proxy",
+  "version": "1.0.0",
+  "description": "CORS Proxy calls with Cloud Functions",
+  "main": "index.js",
+  "repository": "git@github.com:7kfpun/cors-proxy.git",
+  "author": "kf <7kfpun@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "ava"
+  },
+  "devDependencies": {
+    "ava": "^0.22.0",
+    "config": "^1.26.2",
+    "node-fetch": "^1.7.2"
+  }
+}
